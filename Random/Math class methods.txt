@@ -1,0 +1,10 @@
+method with parameters()	returns result of
+__________________________________________________________
+.pow(double a,double b)		 a^b
+.abs(double a) 			|a|
+.max(double a, double b)	biggest of a and b
+.min(dole a, double b) 		smallest of a and b
+.ceil(double a) 		round a up to whole #
+.floor(double a) 		round a down to whole #
+.sqrt(double a) 		square root of a
+.random()			random double from 0 to 1

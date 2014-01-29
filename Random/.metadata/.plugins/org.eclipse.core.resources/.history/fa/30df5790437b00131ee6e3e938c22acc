@@ -1,0 +1,16 @@
+package bucky.gui;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+@SuppressWarnings("serial")
+public class Gui extends JFrame{
+	private JComboBox box;
+	private JLabel picture;
+	
+	private static String[] filename = {"x.png","b.png"};
+	private Icon[] pics = {new ImageIcon(getClass().getResource(filename[0])), new ImageIcon(getClass().getResource(filename[1]))};
+}

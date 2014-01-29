@@ -1,0 +1,11 @@
+import java.util.Random;
+public class Slots {
+	public static int[] play() {
+		Random rand = new Random();
+		int outcome1 = rand.nextInt(8);
+		int outcome2 = rand.nextInt(8);
+		int outcome3 = rand.nextInt(8);
+		int[] waffle = new int[3];
+		return waffle;
+	}
+}

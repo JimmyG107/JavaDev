@@ -1,0 +1,59 @@
+package bucky.gui;
+
+import static java.awt.BorderLayout.CENTER;
+import static java.awt.BorderLayout.SOUTH;
+import static java.awt.Color.WHITE;
+
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+@SuppressWarnings("serial")
+public class Gui extends JFrame{
+	private JPanel mousePanel;
+	private JLabel statusBar;
+	 
+	public Gui(){
+		super("the title");
+		
+		mousePanel = new JPanel();
+		mousePanel.setBackground(WHITE);
+		add(mousePanel, CENTER);
+		
+		statusBar = new JLabel("default");
+		add(statusBar, SOUTH);
+		
+		HandlerClass handler = new HandlerClass();
+		mousePanel.addMouseListener(handler);
+		mousePanel.addMouseMotionListener(handler);
+	}
+	
+	private class HandlerClass implements MouseListener, MouseMotionListener{
+		public void mouseDragged(MouseEvent event) {
+			
+		}
+		public void mouseMoved(MouseEvent event) {
+			
+		}
+		public void mouseClicked(MouseEvent event) {
+			statusBar.setText(String.format("Clicked at %d, %d", event.getX(), event.getY()));
+		}
+		public void mouseEntered(MouseEvent event) {
+			
+		}
+		public void mouseExited(MouseEvent event) {
+			
+		}
+		public void mousePressed(MouseEvent event) {
+			
+		}
+		public void mouseReleased(MouseEvent event) {
+			
+		}
+	}
+}

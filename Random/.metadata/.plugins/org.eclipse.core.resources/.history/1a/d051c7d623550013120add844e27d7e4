@@ -1,0 +1,35 @@
+import java.awt.Color;
+import java.util.Random;
+
+public class TroubleinTerroristsTown {
+
+	public static void main(String[] args) throws InterruptedException {
+		Random rand = new Random();
+		String[] jobs = {"Innocent","Traitor","Innocent"};
+		int num1 = rand.nextInt(2);
+		int num2;
+		int num3;
+		do{
+			num2 = rand.nextInt(3);
+		}while(num1==num2);
+		do{
+			num3 = rand.nextInt(3);
+		}while(num1==num3||num2==num3);
+		
+		TITTGUI player1 = new TITTGUI("Player 1:/n"+jobs[num1], Color.orange);
+		System.out.println("Player 1:  "+jobs[num1]);
+		Thread.sleep(2000);
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
+		Thread.sleep(5000);
+		TITTGUI player2 = new TITTGUI("",Color.blue);
+		System.out.println("Player 2:  "+jobs[num2]);
+		Thread.sleep(2000);
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
+		Thread.sleep(5000);
+		TITTGUI player3 = new TITTGUI("",Color.green);
+		System.out.println("Player 3:  "+jobs[num3]);
+		Thread.sleep(2000);
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
+	}
+
+}

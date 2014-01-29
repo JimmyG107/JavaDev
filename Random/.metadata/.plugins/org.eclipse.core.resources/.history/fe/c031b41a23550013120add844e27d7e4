@@ -1,0 +1,10 @@
+
+public class Player {
+	int playerNum;
+	String job;
+	public Player(int num, String occupation) {
+		playerNum = num;
+		job = occupation;
+	}
+	
+}

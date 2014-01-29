@@ -1,0 +1,46 @@
+	
+
+    import java.util.Random;
+     
+    public class RandomNumber {
+     
+    public static void main(String[] args)
+    {
+            Random dice = new Random();
+            int number;
+           
+            int diceArray[] = new int[6];
+           
+            for (int counter = 1; counter <=100; counter++)
+            {
+                    number = 1+dice.nextInt(6);
+                   
+                    if(number==1)
+                            ++diceArray[0];
+                   
+                    else if (number==2)
+                            ++diceArray[1];
+                   
+                    else if (number==3)
+                            ++diceArray[2];
+                   
+                    else if (number==4)
+                            ++diceArray[3];
+                   
+                    else if (number==5)
+                            ++diceArray[4];
+                   
+                    else if (number==6)
+                            ++diceArray[5];
+            }
+            System.out.println("Index\tValue");
+           
+            for (int Arraycounter = 0; Arraycounter < diceArray.length; Arraycounter++)
+            {
+                    System.out.println(1+Arraycounter + "\t" + diceArray[Arraycounter] +"%");
+            }
+           
+     
+    }       //Main function close
+    }       //Class Close
+

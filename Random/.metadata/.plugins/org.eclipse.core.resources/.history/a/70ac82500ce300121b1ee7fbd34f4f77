@@ -1,0 +1,12 @@
+import javax.swing.JFrame;
+
+public class apples{
+	public static void main(String[] args) {
+		tuna tunaClass = new tuna();
+		tunaClass.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		tunaClass.setSize(275, 180);
+		tunaClass.setVisible(true);
+	}
+}
+
+

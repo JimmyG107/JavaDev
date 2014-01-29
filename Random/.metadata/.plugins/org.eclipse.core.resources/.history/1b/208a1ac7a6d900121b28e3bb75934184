@@ -1,0 +1,8 @@
+public class apples {
+	public static void main(String[] args) {
+		potpie potClass = new potpie(4,5,6);
+		tuna tunaClass = new tuna("Bucky", potClass);
+		
+		System.out.println(tunaObject);
+	}
+}

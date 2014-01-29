@@ -1,0 +1,61 @@
+import java.util.Random;
+import java.util.Scanner;
+public class RandomNumber {
+	public static void main (String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("How many numbers to test?");
+		int nums = input.nextInt();
+		int numbers[]=new int[nums];
+		for (int counter = 0; counter < nums; counter++) {
+			Random number = new Random();
+			numbers[counter] = number.nextInt(6) + 1;
+		}
+		double num1s = 0;
+		double num2s = 0;
+		double num3s = 0;
+		double num4s = 0;
+		double num5s = 0;
+		double num6s = 0;
+		
+		for (int counter = 0; counter < nums; counter++) {
+			switch (numbers[counter]) {
+			case 1 :  num1s++;
+			break;
+			case 2 :  num2s++;
+			break;
+			case 3 :  num3s++;
+			break;
+			case 4 :  num4s++;
+			break;
+			case 5 :  num5s++;
+			break;
+			case 6 :  num6s++;
+			break;
+			}
+		}
+		System.out.println(num1s + " are 1's");
+		System.out.println(num2s + " are 2's");
+		System.out.println(num3s + " are 3's");
+		System.out.println(num4s + " are 4's");
+		System.out.println(num5s + " are 5's");
+		System.out.println(num6s + " are 6's");
+		System.out.println(nums +" numbers");
+		System.out.println(num1s);
+		System.out.println(nums);
+		double num1 = num1s/nums;
+		System.out.println(num1);
+		double per1 = num1s/nums*100;
+		double per2 = num2s/nums*100;
+		double per3 = num3s/nums*100;
+		double per4 = num4s/nums*100;
+		double per5 = num5s/nums*100;
+		double per6 = num6s/nums*100;
+
+		System.out.println(per1 + "% are 1's");
+		System.out.println(per2 + "% are 2's");
+		System.out.println(per3 + "% are 3's");
+		System.out.println(per4 + "% are 4's");
+		System.out.println(per5 + "% are 5's");
+		System.out.println(per6 + "% are 6's");
+	}
+}

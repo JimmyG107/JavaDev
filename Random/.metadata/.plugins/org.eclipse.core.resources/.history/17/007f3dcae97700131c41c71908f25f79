@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Casino {
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		Scanner input2 = new Scanner("");
+		int input3 = 0;
+		int money = 1000;
+		boolean play = true;
+		boolean loop = false;
+		
+		CardDeck theDeck= new CardDeck();
+		theDeck.printArrayListDeck();
+		
+		/*int[] drawn = new int[2];
+		String[][][] deck1 = new String[2][4][13];
+		deck1 = cardDeck.resetDeck(deck1);
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";*/
+		
+		//cardDeck.getDrawn(deck1);
+		do {
+			money = money - 5;
+			String[] slots = Slots.play();
+			money = money + Integer.parseInt(slots[0]);
+			System.out.println("You got a(n) " + slots[1] + ", a(n)" + slots[2] + ", and a(n)" + slots[3] + ".  You won " + slots[0] + " dollars.");
+			System.out.println("You have " + money + " dollars.  Would you like to play again?");
+			System.out.println("Press 1 to quit, and any other key to continue.");
+			if (loop)
+				input.nextLine();
+			input2 = input;
+			if (input2.hasNextInt()) {
+				input3 = input2.nextInt();
+				if (input3 == 1) {
+					play = false;
+				}
+			}
+			loop = true;
+		}while(play == true);
+		System.out.println("Goodbye!");
+	}
+}

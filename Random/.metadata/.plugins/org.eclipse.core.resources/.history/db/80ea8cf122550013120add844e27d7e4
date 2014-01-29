@@ -1,0 +1,31 @@
+import java.util.Random;
+
+public class TroubleinTerroristsTown {
+
+	public static void main(String[] args) throws InterruptedException {
+		Random rand = new Random();
+		String[] jobs = {"Innocent","Traitor","Innocent"};
+		int num1 = rand.nextInt(2);
+		int num2;
+		int num3;
+		do{
+			num2 = rand.nextInt(3);
+		}while(num1==num2);
+		do{
+			num3 = rand.nextInt(3);
+		}while(num1==num3||num2==num3);
+		
+		System.out.println("Player 1:  "+jobs[num1]);
+		Thread.sleep(2000);
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
+		Thread.sleep(5000);
+		System.out.println("Player 2:  "+player2.job);
+		Thread.sleep(2000);
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
+		Thread.sleep(5000);
+		System.out.println("Player 3:  "+player3.job);
+		Thread.sleep(2000);
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
+	}
+
+}

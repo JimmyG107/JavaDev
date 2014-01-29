@@ -1,0 +1,10 @@
+import java.util.Scanner;
+public class apples {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		tuna tunaClass = new tuna();
+		System.out.print("Enter your name:  ");
+		String name = input.nextLine();
+		tunaClass.simpleMessage(name);
+	}
+}

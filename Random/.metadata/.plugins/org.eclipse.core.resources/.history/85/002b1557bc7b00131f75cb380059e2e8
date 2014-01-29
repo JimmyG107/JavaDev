@@ -1,0 +1,23 @@
+package bucky.gui;
+
+import static java.awt.Color.WHITE;
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+@SuppressWarnings("serial")
+public class Gui extends JFrame{
+	private JPanel mousePanel;
+	private JLabel statusBar;
+	 
+	public Gui(){
+		super("the title");
+		
+		mousePanel = new JPanel();
+		mousePanel.setBackground(WHITE);
+		add(mousePanel, BorderLayout.CENTER);
+	}
+	
+}

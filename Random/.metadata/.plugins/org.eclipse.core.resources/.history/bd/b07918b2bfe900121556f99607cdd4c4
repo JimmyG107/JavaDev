@@ -1,0 +1,25 @@
+public class Casino {
+	public static void main(String[] args) throws InterruptedException {
+		int[] drawn = new int[2];
+		cardDeck deckClass = new cardDeck();
+		String[][][] deck1 = new String[2][4][13];
+		deck1 = deckClass.resetDeck(deck1);
+		
+		drawn = deckClass.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = deckClass.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = deckClass.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = deckClass.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = deckClass.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		deckClass.getDrawn(deck1);
+	}
+}

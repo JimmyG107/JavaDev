@@ -1,0 +1,14 @@
+package bucky.gui;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+@SuppressWarnings("serial")
+public class Gui extends JFrame{
+	private JPanel mousePanel;
+	private JLabel statusBar;
+	 
+	
+}

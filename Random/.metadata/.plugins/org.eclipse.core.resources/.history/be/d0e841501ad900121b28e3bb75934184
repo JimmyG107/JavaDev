@@ -1,0 +1,6 @@
+public class apples {
+	public static void main(String[] args) {
+		tuna tunaClass = new tuna();
+		System.out.println(tunaClass.toMilitary();
+	}
+}

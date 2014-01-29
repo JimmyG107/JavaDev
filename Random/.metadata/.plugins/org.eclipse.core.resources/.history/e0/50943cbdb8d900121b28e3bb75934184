@@ -1,0 +1,10 @@
+public class apples {
+	public static void main(String[] args) {
+		tuna tunaClass = new tuna(10);
+		
+		for (int i = 0; i<5;i++) {
+			tunaClass.add();
+			System.out.printf("%s" tunaClass);
+		}
+	}
+}

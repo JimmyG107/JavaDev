@@ -1,0 +1,7 @@
+public class apples {
+	public static void main(String[] args) {
+		for(tuna people: tuna.values()) {
+			System.out.printf("%s\t%s\t%s", people, people.getDesc(), people.getAge());
+		}
+	}
+}

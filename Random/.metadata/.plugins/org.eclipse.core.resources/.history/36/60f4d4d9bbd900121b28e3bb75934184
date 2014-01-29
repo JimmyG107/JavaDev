@@ -1,0 +1,6 @@
+public class food {
+	
+	public void eat() {
+		System.out.println("nom nom nom");
+	}
+}

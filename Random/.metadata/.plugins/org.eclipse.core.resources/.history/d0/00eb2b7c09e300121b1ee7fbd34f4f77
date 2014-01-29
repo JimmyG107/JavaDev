@@ -1,0 +1,9 @@
+public class food {
+	
+	public void eat() {
+		System.out.println("nom nom nom");
+	}
+	private void drink() {
+		System.out.println("gulp gulp gulp");
+	}
+}

@@ -1,0 +1,52 @@
+import java.util.Random;
+public class Slots {
+	public static int[] play() {
+		Random rand = new Random();
+		String[] iconOrigional = {"Apple","Pear","Cherry","Clover","Watermelon","Gold","Bar","Seven"};
+		int outcome1 = rand.nextInt(8);
+		int outcome2 = rand.nextInt(8);
+		int outcome3 = rand.nextInt(8);
+		/*Key:
+		 * 0 = nothing
+		 * 
+		 * 
+		 * 27 = 3bar
+		 * 23045 = Jackpot
+		 */
+		int result = 0;
+		if (outcome1 == 7&&outcome2 == 7&&outcome3 == 7) 
+			result = 17;
+		if (outcome1 == 6&&outcome2 == 6&&outcome3 == 6)
+			result = 16;
+		if (outcome1 == 5&&outcome2 == 5&&outcome3 == 5)
+			result = 15;
+		if (outcome1 == 4&&outcome2 == 4&&outcome3 == 4)
+			result = 14;
+		if (outcome1 == 3&&outcome2 == 3&&outcome3 == 3)
+			result = 13;
+		if (outcome1 == 2&&outcome2 == 2&&outcome3 == 2)
+			result = 12;
+		if (outcome1 == 1&&outcome2 == 1&&outcome3 == 1)
+			result = 11;
+		if (outcome1 == 0&&outcome2 == 0&&outcome3 == 0)
+			result = 10;
+		if (outcome1 == 7&&outcome2 == 7||outcome3 == 7&&outcome2 == 7||outcome1 == 7&&outcome3 == 7) 
+			result = 8;
+		if (outcome1 == 6&&outcome2 == 6||outcome3 == 6&&outcome2 == 6||outcome1 == 6&&outcome3 == 6) 
+			result = 7;
+		if (outcome1 == 5&&outcome2 == 5||outcome3 == 5&&outcome2 == 5||outcome1 == 5&&outcome3 == 5) 
+			result = 6;
+		if (outcome1 == 4&&outcome2 == 4||outcome3 == 4&&outcome2 == 4||outcome1 == 4&&outcome3 == 4) 
+			result = 5;
+		if (outcome1 == 3&&outcome2 == 3||outcome3 == 3&&outcome2 == 3||outcome1 == 7&&outcome3 == 3) 
+			result = 4;
+		if (outcome1 == 2&&outcome2 == 2||outcome3 == 2&&outcome2 == 2||outcome1 == 2&&outcome3 == 2) 
+			result = 3;
+		if (outcome1 == 1&&outcome2 == 1||outcome3 == 1&&outcome2 == 1||outcome1 == 1&&outcome3 == 1) 
+			result = 2;
+		if (outcome1 == 0&&outcome2 == 0||outcome3 == 0&&outcome2 == 0||outcome1 == 0&&outcome3 == 0) 
+			result = 1;
+		int[] waffle = new int[3];
+		return waffle;
+	}
+}

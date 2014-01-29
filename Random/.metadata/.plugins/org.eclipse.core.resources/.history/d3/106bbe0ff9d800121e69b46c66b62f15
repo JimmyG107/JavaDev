@@ -1,0 +1,10 @@
+import java.math.*;
+public class RandomNumber {
+	public static void main (String[] args) {
+		
+		int[] numbers;
+		for (int counter = 0; counter <= 99; counter++) {
+			numbers[counter] = (int) (Math.random());
+		}
+	}
+}

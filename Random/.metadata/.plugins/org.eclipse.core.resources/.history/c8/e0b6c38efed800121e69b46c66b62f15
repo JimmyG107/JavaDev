@@ -1,0 +1,37 @@
+import java.util.Random;
+public class RandomNumber {
+	public static void main (String[] args) {
+		
+		int numbers[]=new int[100];
+		for (int counter = 0; counter <= 99; counter++) {
+			Random number = new Random();
+			numbers[counter] = number.nextInt(6) + 1;
+			System.out.println("Genreating number " + counter + " :  " + numbers[counter]);
+		}
+		System.out.println(numbers[5]);
+		int num1s = 0;
+		int num2s = 0;
+		int num3s = 0;
+		int num4s = 0;
+		int num5s = 0;
+		int num6s = 0;
+		
+		for (int counter = 0; counter <= 99; counter++) {
+			switch (numbers[counter]) {
+			case 1 :  num1s++;
+			case 2 :  num2s++;
+			case 3 :  num3s++;
+			case 4 :  num4s++;
+			case 5 :  num5s++;
+			case 6 :  num6s++;
+			default : System.out.println("not a possile outcome");
+			}
+		}
+		System.out.println(num1s + "% are 1's");
+		System.out.println(num2s + "% are 2's");
+		System.out.println(num3s + "% are 3's");
+		System.out.println(num4s + "% are 4's");
+		System.out.println(num5s + "% are 5's");
+		System.out.println(num6s + "% are 6's");
+	}
+}

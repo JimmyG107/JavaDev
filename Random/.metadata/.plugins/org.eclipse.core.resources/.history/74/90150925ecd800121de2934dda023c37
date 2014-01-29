@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class apples {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		Scanner gradeNumTest = new Scanner(input.nextLine());
+		int total = 0;
+		int grade;
+		int average;
+		int gradeNum;
+		System.out.println("How many grades are you entering?");
+		if (gradeNumTest.hasNextInt()) {
+			gradeNum = gradeNumTest.nextInt();
+		}
+		for  (int counter = 1; counter <= gradeNum; counter++) {
+			System.out.print("Enter grade " + counter + ":  ");
+			if (gradeNumTest.hasNextInt()) {
+				grade = gradeNumTest.nextInt();
+			}
+			total = total + grade;
+		}
+		average = total/gradeNum;
+		System.out.println("Your average is " + average);
+	}
+}

@@ -1,0 +1,29 @@
+public class Casino {
+	public static void main(String[] args){
+		
+		int[] drawn = new int[2];
+		String[][][] deck1 = new String[2][4][13];
+		deck1 = cardDeck.resetDeck(deck1);
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		cardDeck.getDrawn(deck1);
+		
+		
+		int[] slots = Slots.play();
+		System.out.println();
+	}
+}

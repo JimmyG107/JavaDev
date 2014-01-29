@@ -1,0 +1,7 @@
+public class tuna {
+	private int hour;
+	private int minute;
+	private int second;
+	
+	
+}

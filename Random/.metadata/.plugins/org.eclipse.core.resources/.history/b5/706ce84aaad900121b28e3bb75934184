@@ -1,0 +1,21 @@
+public enum tuna {
+	bucky("nice", "22"),
+	kelsey("cutie", "10"),
+	julia("bigmistake", "12");
+	
+	private final String desc;
+	private final String age;
+	
+	tuna(String description, String year) {
+		desc = description;
+		age = year;
+	}
+	
+	public String getDesc() {
+		return desc;
+	}
+	
+	public String getAge() {
+		return age;
+	}
+}

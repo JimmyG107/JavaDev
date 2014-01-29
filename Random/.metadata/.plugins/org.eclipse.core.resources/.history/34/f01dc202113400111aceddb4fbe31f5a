@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Casino {
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		Scanner input2 = new Scanner("");
+		int input3 = 0;
+		int money = 1000;
+		boolean play = true;
+		
+		int[] drawn = new int[2];
+		String[][][] deck1 = new String[2][4][13];
+		deck1 = cardDeck.resetDeck(deck1);
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		drawn = cardDeck.drawCard(deck1);
+		deck1[1][drawn[0]][drawn[1]] = "drawn";
+		
+		//1cardDeck.getDrawn(deck1);
+		do {
+			String[] slots = Slots.play();
+			System.out.println("You got a(n) " + slots[1] + ", a(n)" + slots[2] + ", and a(n)" + slots[3] + ".  You won " + slots[0] + " dollars.");
+			System.out.println("Would you like to play again?  1 for yes, 2 for no.");
+			input2 = input;
+			if (input2.hasNextInt()) {
+				input3 = input2.nextInt();
+				System.out.println(input3);
+				switch (input3) {
+				case 1:  play = true;	break;
+				case 2:  play = false;	break;
+				default:System.out.println("That is not a valid input!");
+				}
+			}
+			else {
+				System.out.println("That is not a valid input!");
+			}	
+		}while(play == true);
+	}
+}
