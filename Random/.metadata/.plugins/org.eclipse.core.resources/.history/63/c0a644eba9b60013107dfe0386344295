@@ -1,0 +1,29 @@
+package minesweeper;
+
+import javax.swing.JFrame;
+
+public class Minesweeper extends JFrame{
+	private static final long serialVersionUID = -7926222441084157804L;
+	int width;
+	int height;
+	int bombs;
+	public Minesweeper(){
+		super("Minesweeper");
+	}
+	public void setWidth(int i) {
+		width = i;
+	}
+	public void setHeight(int i) {
+		height = i;
+	}
+	public void setBombs(int i) {
+		bombs = i;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
+	}
+
+}

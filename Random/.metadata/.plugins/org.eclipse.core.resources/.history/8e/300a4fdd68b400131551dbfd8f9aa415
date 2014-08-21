@@ -1,0 +1,127 @@
+package minesweeper;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
+
+public class SetupWindow extends JFrame{
+	private static final long serialVersionUID = 7320167362374039066L;
+	int[] bombs = {10,40,99};
+	int[][] dim = {{9,9},{16,16},{30,16}};
+	
+	JPanel difficultyPanel;
+	JLabel difficulty;
+	JRadioButton easy;
+	JRadioButton medium;
+	JRadioButton hard;
+	JRadioButton custom;
+	ButtonGroup difficultyButtons;
+	
+	JPanel numbers;
+	JTextField width;
+	JTextField height;
+	JTextField bombNum;
+	
+	JButton finish;
+	
+	public SetupWindow(){
+		super("Minesweeper Setup");
+		setLayout(new FlowLayout());
+		
+		difficultyPanel = new JPanel();
+		difficultyPanel.setLayout(new BoxLayout(difficultyPanel,BoxLayout.Y_AXIS));
+		difficulty = new JLabel("Difficulties:");
+		easy = new JRadioButton("Easy");
+		medium = new JRadioButton("Medium");
+		hard = new JRadioButton("Hard");
+		custom = new JRadioButton("Custom");
+		difficultyButtons = new ButtonGroup();
+		difficultyButtons.add(easy);
+		difficultyButtons.add(medium);
+		difficultyButtons.add(hard);
+		difficultyButtons.add(custom);
+		easy.setSelected(true);
+		difficultyButtons.setSelected(easy.getModel(), true);
+		
+		numbers = new JPanel();
+		width = new JTextField("9");
+		height = new JTextField("9");
+		bombNum = new JTextField("10");
+		width.setColumns(2);
+		height.setColumns(2);
+		bombNum.setColumns(3);
+		width.setEditable(false);
+		height.setEditable(false);
+		bombNum.setEditable(false);
+		
+		finish = new JButton("Finish");
+		
+		difficultyPanel.add(difficulty);
+		difficultyPanel.add(easy);
+		difficultyPanel.add(medium);
+		difficultyPanel.add(hard);
+		difficultyPanel.add(custom);
+		add(difficultyPanel,BorderLayout.EAST);
+		
+		numbers.add(width);
+		numbers.add(height);
+		numbers.add(bombNum);
+		add(numbers, BorderLayout.WEST);
+		
+		add(finish, BorderLayout.SOUTH);
+		
+		Listener listener = new Listener();
+		easy.addActionListener(listener);
+		medium.addActionListener(listener);
+		hard.addActionListener(listener);
+		custom.addActionListener(listener);
+		finish.addActionListener(listener);
+	}
+	private class Listener implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent event) {
+			if(event.getSource()==easy){
+				width.setEditable(false);
+				height.setEditable(false);
+				bombNum.setEditable(false);
+				width.setText("9");
+				height.setText("9");
+				bombNum.setText("10");
+			}else if(event.getSource()==medium){
+				width.setEditable(false);
+				height.setEditable(false);
+				bombNum.setEditable(false);
+				width.setText("16");
+				height.setText("16");
+				bombNum.setText("40");
+			}else if(event.getSource()==hard){
+				width.setEditable(false);
+				height.setEditable(false);
+				bombNum.setEditable(false);
+				width.setText("30");
+				height.setText("16");
+				bombNum.setText("99");
+			}else if(event.getSource()==custom){
+				width.setEditable(true);
+				height.setEditable(true);
+				bombNum.setEditable(true);
+				width.setText("");
+				height.setText("");
+				bombNum.setText("");
+			}else if(event.getSource()==finish){
+				
+			}
+		}
+	}
+}

@@ -1,0 +1,54 @@
+package minesweeper;
+
+import java.awt.FlowLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Minesweeper extends JFrame{
+	private static final long serialVersionUID = -9140773298637555450L;
+		
+	int width;
+	int height;
+	int bombs;
+		
+	JPanel gridPanel;
+	JButton[][] grid;
+	
+	public Minesweeper(){
+		super("Minesweeper");
+		setLayout(new FlowLayout());
+		add(new JButton());
+		grid = new JButton[width][height];
+		gridPanel = new JPanel();
+		ImageIcon blankSquare = new ImageIcon("assets/blankSquare.png");
+		for(int counter1 = 0;counter1<width;counter1++){
+			for(int counter2 = 0; counter2 < height; counter2++){
+				grid[counter1][counter2] = new JButton(blankSquare);
+				grid[counter1][counter2].setSize(40,40);
+				gridPanel.add(grid[counter1][counter2]);
+			}
+		}
+		add(gridPanel);
+	}
+	public int getWidth(){
+		return width;
+	}
+	public int getHeight(){
+		return height;
+	}
+	public int getBombs(){
+		return bombs;
+	}
+	public void setWidth(int wide){
+		width = wide;
+	}
+	public void setHeight(int high){
+		height = high;
+	}
+	public void setBombs(int bomb){
+		bombs = bomb;
+	}
+}

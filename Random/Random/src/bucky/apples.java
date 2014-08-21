@@ -22,6 +22,7 @@ public class apples{
 				System.out.println("You cant do that");
 			}
 		}while(x==1);
+		input.close();
 	}
 }
 

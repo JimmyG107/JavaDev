@@ -47,5 +47,6 @@ public class CustomRandomNumber {
 		System.out.println(per4 + "% are 4's");
 		System.out.println(per5 + "% are 5's");
 		System.out.println(per6 + "% are 6's");//print results
+		input.close();
 	}//end Main
 }//end CustomRandomNumber

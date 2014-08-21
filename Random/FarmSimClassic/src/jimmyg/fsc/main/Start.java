@@ -14,6 +14,7 @@ public class Start {
 		world.plowAll();
 		int x = 0;
 		int timeMultiplier=1;
+		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		while(true){
 			if (x!=0)	input.nextLine();

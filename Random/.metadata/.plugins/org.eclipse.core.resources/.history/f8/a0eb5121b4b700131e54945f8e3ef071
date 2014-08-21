@@ -1,0 +1,61 @@
+package minesweeper;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Minesweeper extends JFrame{
+	private static final long serialVersionUID = -7926222441084157804L;
+	int width;
+	int height;
+	int bombs;
+	private JButton button;
+	public Minesweeper(){
+		super("Minesweeper");
+		setLayout(new FlowLayout());
+		button = new JButton();
+		add(button);
+		
+		JFrame frame = new JFrame("Simple Animation2");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel panel = new JPanel();
+        
+        System.out.println("Set up frame");
+        JButton addBallButton = new JButton("Add a ball");
+        JButton clearButton = new JButton("Remove a ball");
+        JButton clearAllButton = new JButton("Remove all balls");
+        JCheckBox multiplyBox = new JCheckBox("Balls multiply when they hit walls");
+        JButton increaseSpeedButton = new JButton("Increase speed");
+        JButton decreaseSpeedButton = new JButton("Decrease speed");
+        JTextField infoBox = new JTextField("There are currently " + ballCount + " balls.");
+        multiplyBox.setSelected(false);
+        addBallButton.setToolTipText("Click on this button to launch a new ball.");
+        clearButton.setToolTipText("Click on this button to remove a new ball.");
+        clearAllButton.setToolTipText("Click on this button to clear all balls from the screen.");
+        multiplyBox.setToolTipText("If this box is checked, when a ball hits a wall, it will create a new ball.\nThere can only be 100 balls on the screen at a time.");
+        increaseSpeedButton.setToolTipText("Click on this button to make the balls move around faster.");
+        decreaseSpeedButton.setToolTipText("Click on this button to make the balls move around slower.");
+
+	}
+	public void setWidth(int i) {
+		width = i;
+	}
+	public void setHeight(int i) {
+		height = i;
+	}
+	public void setBombs(int i) {
+		bombs = i;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
+	}
+	
+
+}

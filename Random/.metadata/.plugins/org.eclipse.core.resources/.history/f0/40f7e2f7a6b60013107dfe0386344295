@@ -1,0 +1,78 @@
+package minesweeper;
+
+import java.awt.FlowLayout;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Minesweeper extends JFrame{
+	private static final long serialVersionUID = -9140773298637555450L;
+	
+	Minesweeper minesweeper;
+	
+	boolean showMainYet;
+	
+	int width;
+	int height;
+	int bombs;
+		
+	JPanel gridPanel;
+	JButton[][] grid;
+	
+	public Minesweeper(){
+		super("Minesweeper");
+		setLayout(new FlowLayout());
+		showMainYet = false;
+		setupWindow();
+	}
+	public void setupWindow(){
+		SetupWindow setup = new SetupWindow();
+		setup.setBounds(860, 415, 250, 180);
+		setup.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		setup.setVisible(true);
+		int[] values = setup.getValues();
+		width = values[0];
+		height = values[1];
+		bombs = values[2];
+		WindowEvent closingEvent = new WindowEvent(setup, WindowEvent.WINDOW_CLOSING);
+		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closingEvent);
+		System.out.printf("Width: %d \nHeight: %d \nBombs: %d\n",width, height, bombs);
+		
+		grid = new JButton[width][height];
+		gridPanel = new JPanel();
+		ImageIcon blankSquare = new ImageIcon("assets/blankSquare.png");
+		for(int counter1 = 0;counter1<width;counter1++){
+			for(int counter2 = 0; counter2 < height; counter2++){
+				grid[counter1][counter2] = new JButton(blankSquare);
+				grid[counter1][counter2].setSize(40,40);
+				gridPanel.add(grid[counter1][counter2]);
+			}
+		}
+		System.out.println("hi");
+		add(gridPanel);
+		System.out.println("hi again");
+		setup.setVisible(false);
+	}
+	public int getWidth(){
+		return width;
+	}
+	public int getHeight(){
+		return height;
+	}
+	public int getBombs(){
+		return bombs;
+	}
+	public void setWidth(int wide){
+		width = wide;
+	}
+	public void setHeight(int high){
+		height = high;
+	}
+	public void setBombs(int bomb){
+		bombs = bomb;
+	}
+}

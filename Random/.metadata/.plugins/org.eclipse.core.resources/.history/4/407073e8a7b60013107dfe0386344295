@@ -1,0 +1,16 @@
+package minesweeper;
+
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
+
+public class MinesweeperTestDrive {
+	public static void main(String[] args) {
+		Minesweeper minesweeper = new Minesweeper();
+		minesweeper.setSize((minesweeper.getWidth()*40)+10, (minesweeper.getHeight()*40)+50);
+		minesweeper.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		minesweeper.setBackground(Color.WHITE);
+		minesweeper.setVisible(true);
+	}
+}

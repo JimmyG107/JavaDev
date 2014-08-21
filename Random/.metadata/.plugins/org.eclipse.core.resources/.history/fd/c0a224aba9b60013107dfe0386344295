@@ -1,0 +1,24 @@
+package minesweeper;
+
+public class Minesweeper extends JFrame{
+	int width;
+	int height;
+	int bombs;
+	public void setWidth(int i) {
+		width = i;
+	}
+	public void setHeight(int i) {
+		height = i;
+	}
+	public void setBombs(int i) {
+		bombs = i;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		// TODO Auto-generated method stub
+		return height;
+	}
+
+}

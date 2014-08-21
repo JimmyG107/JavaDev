@@ -75,7 +75,7 @@ public class TestCalcGUI{
 		System.out.println(5 ^ 2);
 		word = words[operation - 1];
 		JOptionPane.showMessageDialog(null, fn + word + sn + " equals " + answer, " Simple Addition Calculator GUI", JOptionPane.PLAIN_MESSAGE);
-		
+		test.close();
 	}
 }
 

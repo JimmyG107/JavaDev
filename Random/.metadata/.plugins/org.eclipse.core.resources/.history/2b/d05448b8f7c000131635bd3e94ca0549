@@ -1,0 +1,136 @@
+package minesweeper;
+
+import java.awt.FlowLayout;
+import java.util.Random;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Minesweeper extends JFrame{
+	private static final long serialVersionUID = -7926222441084157804L;
+	int width;
+	int height;
+	int bombs;
+	JFrame frame;
+	GridSquare[][] grid;
+	public Minesweeper(int wide, int high, int bomb){
+		super("Minesweeper");
+		width=wide;
+		height=high;
+		bombs=bomb;
+		makeGrid();
+		frame = new JFrame("Minesweeper");
+		frame.setLayout(new FlowLayout());
+		refreshBounds();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+	public void refreshBounds() {
+		frame.setBounds((1820-(width*40))/2,(880-(height*40))/2,(width*40)+100,(height*40)+200);
+	}
+	public void makeGrid(){
+		grid = new GridSquare[width][height];
+		for(int counter1=0;counter1<width;counter1++){
+			for(int counter2=0;counter2<height;counter2++){
+				grid[counter1][counter2]= new GridSquare(false, 0);
+				grid[counter1][counter2].setSize(40,40);
+			}
+		}
+		Random rand = new Random();
+		for(int bombNum=0;bombNum<bombs;bombNum++){
+			int xCoord;
+			int yCoord;
+			do{
+				xCoord = rand.nextInt(width);
+				yCoord = rand.nextInt(height);
+			}while(grid[xCoord][yCoord].getBombs()==9);
+			grid[xCoord][yCoord].setBombs(9);
+		}
+		for(int counter1=0;counter1<width;counter1++){
+			for(int counter2=0;counter2<height;counter2++){
+				if(grid[counter1][counter2].getBombs()!=9){
+					int bombsNear=0;
+					for(int i=0; i<8;i++){
+						switch(i){
+						case 0:{
+							if(counter1+1<0||counter1+1>width||counter2<0||counter2>height){
+								break;
+							}
+							bombsNear=(grid[counter1+1][counter2+1].getBombs()==9) ? bombsNear+1:bombsNear;
+							break;
+						}
+						case 1:{
+							if(counter1+1<0||counter1+1>width||counter2<0||counter2>height){
+								break;
+							}
+							bombsNear=(grid[counter1+1][counter2].getBombs()==9) ? bombsNear+1:bombsNear;
+							break;
+						}
+						case 2:{
+							if(counter1+1<0||counter1+1>width||counter2<0||counter2>height){
+								break;
+							}
+							bombsNear=(grid[counter1+1][counter2-1].getBombs()==9) ? bombsNear+1:bombsNear;
+							break;
+						}
+						case 3:{
+							if(counter1+1<0||counter1+1>width||counter2<0||counter2>height){
+								break;
+							}
+							bombsNear=(grid[counter1][counter2-1].getBombs()==9) ? bombsNear+1:bombsNear;
+							break;
+						}
+						case 4:{
+							if(counter1+1<0||counter1+1>width||counter2<0||counter2>height){
+								break;
+							}
+							bombsNear=(grid[counter1-1][counter2-1].getBombs()==9) ? bombsNear+1:bombsNear;
+							break;
+						}
+						case 5:{
+							if(counter1+1<0||counter1+1>width||counter2<0||counter2>height){
+								break;
+							}
+							bombsNear=(grid[counter1-1][counter2].getBombs()==9) ? bombsNear+1:bombsNear;
+							break;
+						}
+						case 6:{
+							if(counter1+1<0||counter1+1>width||counter2<0||counter2>height){
+								break;
+							}
+							bombsNear=(grid[counter1-1][counter2+1].getBombs()==9) ? bombsNear+1:bombsNear;
+							break;
+						}
+						case 7:{
+							if(counter1+1<0||counter1+1>width||counter2<0||counter2>height){
+								break;
+							}
+							bombsNear=(grid[counter1][counter2+1].getBombs()==9) ? bombsNear+1:bombsNear;
+							break;
+						}
+						}
+					}
+				}
+			}
+		}
+	}
+	public void setWidth(int i) {
+		width = i;
+	}
+	public void setHeight(int i) {
+		height = i;
+	}
+	public void setBombs(int i) {
+		bombs = i;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
+	}
+	public int getBombs() {
+		return bombs;
+	}
+
+}

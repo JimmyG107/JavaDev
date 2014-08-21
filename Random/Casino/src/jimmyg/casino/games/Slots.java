@@ -84,6 +84,7 @@ public class Slots {
 			}
 			//result = 0;
 		}while(playAgain);
+		input.close();
 		return money;
 	}
 }

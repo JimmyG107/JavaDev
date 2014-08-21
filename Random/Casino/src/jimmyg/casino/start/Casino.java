@@ -7,7 +7,6 @@ import jimmyg.casino.games.Slots;
 
 public class Casino {
 	public static void main(String[] args){
-		@SuppressWarnings("unused")
 		Scanner input = new Scanner(System.in);
 		int money = 1000;
 		boolean play = true;
@@ -19,5 +18,6 @@ public class Casino {
 			Slots.play(money);
 		}while(play);
 		System.out.println("Goodbye!");
+		input.close();
 	}
 }

@@ -5,6 +5,7 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
+
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -44,7 +45,8 @@ public class test {
         //The first JPanel contains a JLabel and JCombobox
         final JPanel comboPanel = new JPanel();
         JLabel comboLbl = new JLabel("Fruits:");
-        JComboBox fruits = new JComboBox(fruitOptions);
+        @SuppressWarnings({ "unchecked", "rawtypes" })
+		JComboBox fruits = new JComboBox(fruitOptions);
         
         comboPanel.add(comboLbl);
         comboPanel.add(fruits);
@@ -54,7 +56,8 @@ public class test {
         final JPanel listPanel = new JPanel();
         listPanel.setVisible(false);
         JLabel listLbl = new JLabel("Vegetables:");
-        JList vegs = new JList(vegOptions);
+        @SuppressWarnings({ "rawtypes", "unchecked" })
+		JList vegs = new JList(vegOptions);
         vegs.setLayoutOrientation(JList.HORIZONTAL_WRAP);
           
         listPanel.add(listLbl);

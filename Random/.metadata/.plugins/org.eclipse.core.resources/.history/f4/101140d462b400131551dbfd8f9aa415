@@ -1,0 +1,14 @@
+package minesweeper;
+
+import javax.swing.JFrame;
+
+
+public class MinesweeperTestDrive {
+	public static void main(String[] args) {
+		JFrame frame = new JFrame("Minesweeper");
+		frame.setBounds(740,250,400,500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		
+	}
+}

@@ -12,7 +12,7 @@ public class Monopoly {
 		while(!input.hasNextInt()){
 			input = new Scanner(JOptionPane.showInputDialog("That is not a valid input.\nPlease make sure your input is a number\ngreater than 1 and less than 9."));
 		}
-		
+		input.close();
 	}
 
 }
