@@ -4,23 +4,53 @@ import javax.swing.JLabel;
 
 public class GridSquare extends JLabel {
 	private static final long serialVersionUID = -3730369173152757620L;
-	boolean marked;
-	int surroundingBombs;
-	public GridSquare(boolean isMarked, int bombs){
+	
+	private int x, y;
+	private boolean marked, revealed;
+	private int surroundingBombs;
+
+	public GridSquare(int x, int y) {
 		super();
-		marked=isMarked;
-		surroundingBombs = bombs;
+		this.x = x;
+		this.y = y;
+		marked = false;
+		revealed = false;
+		surroundingBombs = 0;
 	}
-	public int getBombs(){
-		return surroundingBombs;
+	
+	public int x() {
+		return x;
 	}
-	public boolean getMarked(){
+	
+	public int y() {
+		return y;
+	}
+
+	public boolean isMarked() {
 		return marked;
 	}
-	public void setBombs(int bombs){
-		surroundingBombs=bombs;
+
+	public void setMarked(boolean isMarked) {
+		marked = isMarked;
 	}
-	public void setMarked(boolean isMarked){
-		marked=isMarked;
+	
+	public void toggleMarked() {
+		marked = (marked) ? false : true;
+	}
+	
+	public boolean isRevealed() {
+		return revealed;
+	}
+	
+	public void setRevealed(boolean isRevealed) {
+		revealed = isRevealed;
+	}
+
+	public int getBombs() {
+		return surroundingBombs;
+	}
+
+	public void setBombs(int bombs) {
+		surroundingBombs = bombs;
 	}
 }

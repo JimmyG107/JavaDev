@@ -112,8 +112,9 @@ public class SetupWindow extends JFrame{
 	    });
 	}
 	public int[] getValues(){
-		while(!hasEnteredValues){
-			
+		hasEnteredValues = false;
+		while(!hasEnteredValues) {
+			Thread.onSpinWait();	// 2019 addition
 		}
 		int[] nums = new int[]{Integer.parseInt(width.getText()), Integer.parseInt(height.getText()), Integer.parseInt(bombs.getText())};
 		return nums;
